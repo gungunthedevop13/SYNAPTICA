@@ -1,0 +1,126 @@
+/* CompletedTasksPage.css — aligned with the app's lime/dark design system */
+
+.completed-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0.4rem 0 2rem;
+}
+
+.completed-head {
+  margin-bottom: 1.4rem;
+}
+
+.completed-head h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f4f5f3;
+  margin: 0 0 4px;
+}
+
+.completed-sub {
+  font-size: 12.5px;
+  color: #9a9d96;
+  margin: 0;
+}
+
+.completed-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.completed-item {
+  background-color: #111310;
+  border: 0.5px solid #1e211b;
+  border-left: 3px solid #6ee7b7;
+  border-radius: 10px;
+  padding: 0.9rem 1.1rem;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.completed-item:hover {
+  opacity: 1;
+  border-color: #2e3329;
+}
+
+.completed-item-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #d3d5cd;
+  text-decoration: line-through;
+  text-decoration-color: #3a4032;
+  margin-bottom: 4px;
+}
+
+.completed-item-meta {
+  font-size: 11.5px;
+  color: #6c6f67;
+}
+
+.completed-item-note {
+  font-size: 12px;
+  color: #9a9d96;
+  margin: 8px 0 0;
+  line-height: 1.4;
+}
+
+.completed-item-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.completed-item-actions button {
+  background-color: #161911;
+  color: #d3d5cd;
+  border: 0.5px solid #2e3329;
+  padding: 7px 14px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.completed-item-actions button:hover {
+  background-color: rgba(202, 255, 77, 0.12);
+  border-color: rgba(202, 255, 77, 0.4);
+  color: #f4f5f3;
+  transform: translateY(-1px);
+}
+
+.completed-item-actions .delete-permanent {
+  background-color: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.28);
+  color: #f4a3a3;
+}
+.completed-item-actions .delete-permanent:hover {
+  background-color: rgba(239, 68, 68, 0.18);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #fecaca;
+}
+
+.completed-empty {
+  border: 0.5px dashed #2e3329;
+  border-radius: 12px;
+  padding: 2.6rem 1.5rem;
+  text-align: center;
+  background: #111310;
+}
+
+.completed-empty-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #f4f5f3;
+  margin-bottom: 6px;
+}
+
+.completed-empty-sub {
+  font-size: 12.5px;
+  color: #9a9d96;
+}

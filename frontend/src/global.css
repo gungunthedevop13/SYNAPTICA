@@ -1,0 +1,21 @@
+/* global.css — the one CSS file guaranteed to load on every page.
+   Fixes the browser's default body margin (~8px), which was pushing
+   full-height layouts (.home-layout, .dashboard, etc.) just past 100vh
+   and triggering an ugly native outer-window scrollbar on top of the
+   properly-styled inner scrollbars each page already has. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: #0c0e0b;
+}

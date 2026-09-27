@@ -1,0 +1,228 @@
+/* TimetablePage.css — aligned with the app's lime/dark design system
+   (scoped under .timetable-container — no global * / body overrides,
+   which previously leaked fonts/background onto every other page) */
+
+.timetable-container {
+  max-width: 100%;
+  padding: 0;
+  animation: tt-fade-in 0.4s ease;
+}
+
+/* ---------- Full-page shell ---------- */
+.timetable-page {
+  min-height: 100vh;
+  background-color: #0c0e0b;
+  padding: 2.4rem;
+  box-sizing: border-box;
+}
+
+.timetable-page .timetable-container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.page-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #9a9d96;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1.4rem;
+  transition: color 0.2s ease;
+}
+.page-back:hover {
+  color: #caff4d;
+}
+
+@keyframes tt-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timetable-container h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f4f5f3;
+  margin: 0 0 4px;
+}
+
+.timetable-sub {
+  font-size: 12.5px;
+  color: #9a9d96;
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+.timetable-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.4rem;
+}
+
+.timetable-header .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.add-slot-btn {
+  background-color: #caff4d;
+  color: #0a0b08;
+  padding: 9px 16px;
+  font-size: 12.5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.add-slot-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px -10px rgba(202, 255, 77, 0.45);
+}
+
+.remove-slot-btn {
+  background-color: transparent;
+  color: #f4a3a3;
+  padding: 9px 16px;
+  font-size: 12.5px;
+  border: 0.5px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: inherit;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.remove-slot-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ---------- Scroll wrapper ---------- */
+.timetable-scroll {
+  overflow-x: auto;
+  border: 0.5px solid #1e211b;
+  border-radius: 12px;
+}
+
+/* ---------- Table ---------- */
+.timetable {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  table-layout: auto;
+  background-color: #111310;
+}
+
+.timetable th {
+  background-color: #161911;
+  color: #d3d5cd;
+  padding: 0.7rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 0.5px solid #1e211b;
+}
+
+.timetable th span {
+  cursor: text;
+  display: inline-block;
+  min-width: 60px;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+.timetable th span:focus {
+  outline: none;
+  background-color: rgba(202, 255, 77, 0.1);
+  box-shadow: 0 0 0 1px rgba(202, 255, 77, 0.4);
+}
+
+.timetable td {
+  border: 0.5px solid #1e211b;
+  padding: 0.5rem;
+  background-color: #0c0e0b;
+  color: #e3e5de;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  max-width: 240px;
+  min-width: 150px;
+  text-align: center;
+  vertical-align: top;
+  position: relative;
+}
+
+.timetable td:hover {
+  box-shadow: inset 0 0 0 1px rgba(202, 255, 77, 0.25);
+}
+
+.day-label {
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background-color: #161911;
+  color: #d3d5cd;
+  font-size: 12.5px;
+}
+
+/* ---------- Cell textareas ---------- */
+.timetable td textarea {
+  width: 100%;
+  min-height: 40px;
+  max-width: 220px;
+  border: none;
+  background: transparent;
+  font-size: 12.5px;
+  font-family: inherit;
+  padding: 6px;
+  resize: none;
+  color: #f4f5f3;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+
+.timetable td textarea::placeholder {
+  color: #2e3329;
+}
+
+.timetable td textarea:focus {
+  outline: none;
+  background-color: rgba(202, 255, 77, 0.06);
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(202, 255, 77, 0.35);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .timetable-page {
+    padding: 1.2rem;
+  }
+  .timetable td,
+  .timetable th {
+    padding: 0.4rem;
+    font-size: 11.5px;
+  }
+  .add-slot-btn,
+  .remove-slot-btn {
+    padding: 8px 12px;
+    font-size: 11.5px;
+  }
+  .timetable td textarea {
+    font-size: 11.5px;
+  }
+}

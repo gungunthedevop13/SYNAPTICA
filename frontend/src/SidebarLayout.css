@@ -1,0 +1,113 @@
+/* SidebarLayout.css — aligned with the app's lime/dark design system */
+
+.layout {
+  display: flex;
+  height: 100vh;
+  background-color: #0c0e0b;
+  color: #f4f5f3;
+  font-family: "Inter", sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background-color: #08090c;
+  border-right: 0.5px solid #1e211b;
+  padding: 1.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #f4f5f3;
+  margin: 0 0 8px 4px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #9a9d96;
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 9px 12px;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item i {
+  font-size: 15px;
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background-color: #161911;
+  color: #f4f5f3;
+}
+
+.nav-item.active {
+  font-weight: 600;
+  color: #0a0b08;
+  background-color: #caff4d;
+}
+
+.nav-back {
+  margin-top: auto;
+  border-top: 0.5px solid #1e211b;
+  padding-top: 14px;
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 100%;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 0.5px solid #1e211b;
+    padding: 0.9rem;
+    gap: 12px;
+  }
+  .logo {
+    margin: 0;
+    white-space: nowrap;
+  }
+  .nav-links {
+    flex-direction: row;
+    gap: 6px;
+  }
+  .nav-item {
+    white-space: nowrap;
+  }
+  .main-content {
+    padding: 1.2rem;
+  }
+}

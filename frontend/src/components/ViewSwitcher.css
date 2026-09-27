@@ -1,0 +1,25 @@
+.view-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.view-switcher button {
+  background-color: #0b0b0b;
+  color: #e0e0e0;
+  border: 1px solid #444;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.view-switcher button.active {
+  background-color: #3a7bff;
+  color: white;
+  border-color: #3a7bff;
+}
+
+.view-switcher button:hover {
+  background-color: #444c70;
+}

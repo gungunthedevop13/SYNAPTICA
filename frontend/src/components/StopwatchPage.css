@@ -1,0 +1,116 @@
+/* StopwatchPage.css — aligned with the app's lime/dark design system
+   (scoped under .stopwatch-page — no global body override) */
+
+.stopwatch-page {
+  min-height: 100vh;
+  background-color: #0c0e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  box-sizing: border-box;
+}
+
+.stopwatch-container {
+  width: 100%;
+  max-width: 420px;
+  background-color: #111310;
+  border: 0.5px solid #1e211b;
+  border-radius: 16px;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  color: #e3e5de;
+  font-family: "Inter", sans-serif;
+}
+
+.stopwatch-container h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #f4f5f3;
+  margin: 0 0 4px;
+}
+
+.stopwatch-sub {
+  font-size: 12.5px;
+  color: #9a9d96;
+  margin: 0 0 1.8rem;
+}
+
+.time-display {
+  font-family: "Poppins", sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: #caff4d;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.controls button {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 0.5px solid #2e3329;
+  background-color: #161911;
+  color: #d3d5cd;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+}
+
+.controls button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.sw-start {
+  background-color: rgba(202, 255, 77, 0.12) !important;
+  border-color: rgba(202, 255, 77, 0.4) !important;
+  color: #caff4d !important;
+}
+.sw-start:hover:not(:disabled) {
+  background-color: rgba(202, 255, 77, 0.2) !important;
+}
+
+.sw-stop {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+  color: #f4a3a3 !important;
+}
+.sw-stop:hover:not(:disabled) {
+  background-color: rgba(239, 68, 68, 0.18) !important;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: #9a9d96;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s ease;
+}
+.back-button:hover {
+  color: #caff4d;
+}
+
+@media (max-width: 480px) {
+  .stopwatch-page { padding: 1.2rem; }
+  .stopwatch-container { padding: 2rem 1.4rem; }
+  .time-display { font-size: 40px; }
+}

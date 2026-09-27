@@ -1,0 +1,237 @@
+/* CalendarVIew.css — aligned with the app's lime/dark design system */
+
+.calendar-view-page {
+  padding: 4px 0 20px;
+}
+
+.cv-header {
+  margin-bottom: 1.6rem;
+}
+
+.cv-header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #f4f5f3;
+  margin: 0 0 4px;
+}
+
+.cv-sub {
+  font-size: 12.5px;
+  color: #9a9d96;
+  margin: 0;
+}
+
+/* ---------- Month grouping ---------- */
+.cv-month-group {
+  margin-bottom: 2rem;
+}
+
+.cv-month-group:last-child {
+  margin-bottom: 0;
+}
+
+.cv-month-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d3d5cd;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid #1e211b;
+}
+
+/* ---------- Grid ---------- */
+.calendar-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.calendar-day {
+  background-color: #111310;
+  border: 0.5px solid #1e211b;
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 108px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.calendar-day:hover {
+  border-color: #2e3329;
+  transform: translateY(-2px);
+}
+
+.calendar-day.is-weekend {
+  background-color: #0e100c;
+}
+
+.calendar-day.is-today {
+  border-color: #caff4d;
+  background: linear-gradient(160deg, rgba(202, 255, 77, 0.09), rgba(202, 255, 77, 0.02));
+  box-shadow: 0 0 0 1px rgba(202, 255, 77, 0.12), 0 12px 28px -14px rgba(202, 255, 77, 0.35);
+}
+
+.calendar-day.is-today:hover {
+  transform: translateY(-2px);
+}
+
+/* ---------- Date label ---------- */
+.date-label {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  position: relative;
+}
+
+.cv-add-btn {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: #161911;
+  border: 0.5px solid #2e3329;
+  color: #9a9d96;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.calendar-day:hover .cv-add-btn,
+.cv-add-btn:focus-visible {
+  opacity: 1;
+}
+
+.cv-add-btn:hover {
+  background: rgba(202, 255, 77, 0.14);
+  border-color: rgba(202, 255, 77, 0.4);
+  color: #caff4d;
+}
+
+.cv-quick-input {
+  width: 100%;
+  background: #0c0e0b;
+  border: 0.5px solid rgba(202, 255, 77, 0.35);
+  border-radius: 7px;
+  padding: 6px 9px;
+  font-size: 11.5px;
+  color: #f4f5f3;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.cv-quick-input::placeholder { color: #6c6f67; }
+.cv-quick-input:focus {
+  outline: none;
+  border-color: #caff4d;
+}
+.cv-quick-input:disabled {
+  opacity: 0.6;
+}
+
+@media (hover: none) {
+  .cv-add-btn {
+    opacity: 1;
+    background: transparent;
+    border-color: transparent;
+  }
+}
+
+.date-weekday {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6c6f67;
+}
+
+.calendar-day.is-today .date-weekday {
+  color: #caff4d;
+}
+
+.date-num {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e3e5de;
+  line-height: 1;
+}
+
+.calendar-day.is-today .date-num {
+  color: #f4f5f3;
+}
+
+.calendar-day.is-weekend .date-num,
+.calendar-day.is-weekend .date-weekday {
+  color: #55584f;
+}
+
+.calendar-day.is-weekend.is-today .date-weekday,
+.calendar-day.is-weekend.is-today .date-num {
+  color: #caff4d;
+}
+
+/* ---------- Tasks ---------- */
+.task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.calendar-empty {
+  flex: 1;
+}
+
+.calendar-task {
+  background-color: rgba(202, 255, 77, 0.08);
+  border: 0.5px solid rgba(202, 255, 77, 0.22);
+  border-radius: 7px;
+  padding: 7px 9px;
+  transition: background-color 0.15s ease;
+}
+
+.calendar-task:hover {
+  background-color: rgba(202, 255, 77, 0.14);
+}
+
+.calendar-task strong {
+  display: block;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #eaffb0;
+  margin-bottom: 1px;
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-task small {
+  font-size: 10px;
+  color: #9ecb63;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .calendar-view {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .calendar-day {
+    min-height: 92px;
+    padding: 11px;
+  }
+  .date-num {
+    font-size: 17px;
+  }
+}
